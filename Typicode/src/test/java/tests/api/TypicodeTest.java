@@ -2,8 +2,6 @@ package tests.api;
 
 import api.PostsPojo;
 import api.TypicodeClient;
-import io.restassured.response.Response;
-import io.restassured.response.ResponseBody;
 import io.restassured.response.ValidatableResponse;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -54,19 +52,6 @@ public class TypicodeTest {
         assertThat(expectedTitle, is(equalTo(pojo.getTitle())));
         assertThat(expectedBody, is(equalTo(pojo.getBody())));
         assertThat(expectedUserId, is(equalTo(pojo.getUserId())));
-    }
-
-    @Test
-    public void testCreatePostOne() {
-        PostsPojo pojo = new PostsPojo();
-        pojo.setTitle("Title FH");
-        pojo.setBody("Body FH");
-        pojo.setUserId(5);
-
-        Response response = this.typicodeClient.createPostOne(pojo);
-
-        ResponseBody body = response.getBody();
-        System.out.println(body.asString());
     }
 
 }

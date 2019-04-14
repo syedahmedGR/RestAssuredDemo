@@ -1,6 +1,5 @@
 package api;
 
-import io.restassured.response.Response;
 import io.restassured.response.ValidatableResponse;
 
 import static io.restassured.RestAssured.given;
@@ -38,14 +37,6 @@ public class TypicodeClient {
                .when()
                 .post(this.baseUri + POSTS_ENDPOINT)
                .then();
-    }
-
-    public Response createPostOne(Object json) {
-        return given()
-                .header("Content-Type", "application/json")
-                .body(json)
-                .when()
-                .post(this.baseUri + POSTS_ENDPOINT);
     }
 
 }
