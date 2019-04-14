@@ -49,7 +49,7 @@ public class BaseTwitterClient {
      * Gets the full url
      *
      * @param endpoint path/resource being reached
-     * @return full the full url
+     * @return the full url
      */
     public String getFullUrl(String endpoint) {
         return this.baseUri + endpoint;
